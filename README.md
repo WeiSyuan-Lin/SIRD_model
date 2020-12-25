@@ -32,3 +32,4 @@ day=1
 [bst_D,bst_I,reg_D,reg_I]=predict_train(DATA,Country,day)
 predict_test(DATA,'Italy',bst_D,bst_I,reg_D,reg_I,day)
 ```
+You can download SIRD_DEMO.html to see the example.
