@@ -1,6 +1,10 @@
 # Covid-19 data analysis and predict
 Use simple model to analysis covid-19's behavier and predict Infected and deaths.
 
+# Dataset
+Novel Coronavirus (COVID-19) Cases, provided by JHU CSSE
+https://github.com/CSSEGISandData/COVID-19.
+
 # Install
 required packages in Python
 ```
