@@ -90,13 +90,20 @@ def input_all_data():
         with open('covid.csv','wb') as file:
             file.write(res.content)
         DATA.append(pd.read_csv('covid.csv'))
+    for i in range(1,26):
+        url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/12-'+str(i)+'-2020.csv'
+        res = requests.get(url, allow_redirects=True)
+        with open('covid.csv','wb') as file:
+            file.write(res.content)
+        DATA.append(pd.read_csv('covid.csv'))
+    
     return DATA
 
 
 # In[7]:
 
 
-#DATA=input_all_data()
+
 
 
 # In[8]:
@@ -237,12 +244,6 @@ def predict(beta,gamma,mu,N,St_now,It_now,Rt_now,Dt_now):
     Rt_pred=Rt_now+(dt*gamma*It_now)
     Dt_pred=Dt_now+(dt*mu*It_now)
     return St_pred,It_pred,Rt_pred,Dt_pred
-
-
-# In[45]:
-
-
-#Country=['Netherlands','United Kingdom','France','Belgium','Spain','Italy','Germany','US','Egypt','Kenya','Japan','Austria','Qatar']
 
 
 # In[ ]:
@@ -416,25 +417,6 @@ def predict_test(DATA,Countryname,bst_D,bst_I,reg_D,reg_I,day):
 
 
 # In[64]:
-
-
-#day=10
-#[bst_D,bst_I,reg_D,reg_I]=predict_train(DATA,Country,day)
-
-
-# In[65]:
-
-
-#predict_test(DATA,'United Kingdom',bst_D,bst_I,reg_D,reg_I,day)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
